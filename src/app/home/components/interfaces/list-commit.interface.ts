@@ -1,5 +1,4 @@
 export interface commit {
-  id: number;
   author: string;
   email: string;
   date: string;
