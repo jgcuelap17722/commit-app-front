@@ -43,7 +43,7 @@ Follow these steps to start the project in your local environment:
 
 4. **Development Environment (Local)**:
 
-   When you are developing the application in your local environment, make sure that the API URL is configured as follows:
+   When you are developing the application in your local environment, make sure that the API URL in **(src/environments/environment.ts)** is set as follows:
 
    ```typescript
    export const environment = {
