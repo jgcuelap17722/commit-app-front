@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { HomeActions } from './home.actions';
+import { initFlowbite } from 'flowbite';
+import { apiResponse } from './components/interfaces/list-commit.interface';
 
 @Component({
   selector: 'app-home',
@@ -16,18 +18,19 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    initFlowbite();
     this.getListCommitBack();
     this.getListCommitFront();
   }
 
   getListCommitBack() {
-    this.apiService.getListCommitBack().subscribe((data) => {
+    this.apiService.getListCommitBack(1).subscribe((data: apiResponse) => {
       this._homeActions.setListCommitBack(data);
     });
   }
 
   getListCommitFront() {
-    this.apiService.getListCommitFront().subscribe((data) => {
+    this.apiService.getListCommitFront(1).subscribe((data) => {
       this._homeActions.setListCommitFront(data);
     });
   }
