@@ -41,13 +41,24 @@ Follow these steps to start the project in your local environment:
    npm install
    ```
 
-4. **Install Dependencies**:
+4. **Development Environment (Local)**:
+
+   When you are developing the application in your local environment, make sure that the API URL is configured as follows:
+
+   ```typescript
+   export const environment = {
+     API_URL: "http://localhost:3000/api",
+     // API_URL: 'https://commitappback.onrender.com/api',
+   };
+   ```
+
+5. **Start App**:
 
    ```bash
    ng serve
    ```
 
-   The development server will run at http://localhost:4200/. Open this address in your browser to see the application in real time.
+The development server will run at http://localhost:4200/. Open this address in your browser to see the application in real time.
 
 Ready! Now you can start working on the project and make changes as per your needs.
 
