@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeActions } from '../../home.actions';
+import { apiResponse } from '../interfaces/list-commit.interface';
 
 @Component({
   selector: 'app-tabs',
@@ -8,8 +9,25 @@ import { HomeActions } from '../../home.actions';
 })
 export class TabsComponent implements OnInit {
   constructor(private readonly _homeActions: HomeActions) {}
-  listCommitBack: any[] = [];
-  listCommitFront: any[] = [];
+  listCommitBack: apiResponse = {
+    success: false,
+    pagination: {
+      currentPage: 0,
+      totalItems: 0,
+      totalPages: 0,
+    },
+    data: [],
+  };
+
+  listCommitFront: apiResponse = {
+    success: false,
+    pagination: {
+      currentPage: 0,
+      totalItems: 0,
+      totalPages: 0,
+    },
+    data: [],
+  };
 
   ngOnInit(): void {
     this.getListCommitFront();

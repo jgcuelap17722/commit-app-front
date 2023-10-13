@@ -1,81 +1,295 @@
-<div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-  <ul
-    class="flex flex-wrap -mb-px text-sm font-medium text-center"
-    id="myTab"
-    data-tabs-toggle="#myTabContent"
-    role="tablist"
-  >
-    <li class="mr-2" role="presentation">
-      <button
-        class="inline-block p-4 border-b-2 rounded-t-lg"
-        id="profile-tab"
-        data-tabs-target="#profile"
-        type="button"
-        role="tab"
-        aria-controls="profile"
-        aria-selected="false"
+<div class="mt-20 ml-48 mr-48">
+  <div class="mb-5">
+    <h1
+      class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"
+    >
+      <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-400"
+        >Commit</span
       >
-        Backend
-      </button>
-    </li>
-    <li class="mr-2" role="presentation">
-      <button
-        class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-        id="dashboard-tab"
-        data-tabs-target="#dashboard"
-        type="button"
-        role="tab"
-        aria-controls="dashboard"
-        aria-selected="false"
-      >
-        Frontend
-      </button>
-    </li>
-    <li class="mr-2" role="presentation">
-      <button
-        class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-        id="settings-tab"
-        data-tabs-target="#settings"
-        type="button"
-        role="tab"
-        aria-controls="settings"
-        aria-selected="false"
-      >
-        About
-      </button>
-    </li>
-  </ul>
-</div>
-<div id="myTabContent">
-  <div
-    class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
-    id="profile"
-    role="tabpanel"
-    aria-labelledby="profile-tab"
-  >
-    <app-table [listCommit]="listCommitBack"></app-table>
+      App
+    </h1>
   </div>
-  <div
-    class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
-    id="dashboard"
-    role="tabpanel"
-    aria-labelledby="dashboard-tab"
-  >
-    <app-table [listCommit]="listCommitFront"></app-table>
+
+  <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+    <ul
+      class="flex flex-wrap -mb-px text-sm font-medium text-center"
+      id="myTab"
+      data-tabs-toggle="#myTabContent"
+      role="tablist"
+    >
+      <li class="mr-2" role="presentation">
+        <button
+          class="inline-block p-4 border-b-2 rounded-t-lg"
+          id="backend-tab"
+          data-tabs-target="#backend"
+          type="button"
+          role="tab"
+          aria-controls="backend"
+          aria-selected="true"
+        >
+          Backend
+        </button>
+      </li>
+      <li class="mr-2" role="presentation">
+        <button
+          class="inline-block p-4 border-b-2 rounded-t-lg"
+          id="frontend-tab"
+          data-tabs-target="#frontend"
+          type="button"
+          role="tab"
+          aria-controls="frontend"
+          aria-selected="false"
+        >
+          Frontend
+        </button>
+      </li>
+      <li class="mr-2" role="presentation">
+        <button
+          class="inline-block p-4 border-b-2 rounded-t-lg"
+          id="settings-tab"
+          data-tabs-target="#settings"
+          type="button"
+          role="tab"
+          aria-controls="settings"
+          aria-selected="false"
+        >
+          About Backend
+        </button>
+      </li>
+    </ul>
   </div>
-  <div
-    class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
-    id="settings"
-    role="tabpanel"
-    aria-labelledby="settings-tab"
-  >
-    <p class="text-sm text-gray-500 dark:text-gray-400">
-      This is some placeholder content the
-      <strong class="font-medium text-gray-800 dark:text-white"
-        >Settings tab's associated content</strong
-      >. Clicking another tab will toggle the visibility of this one for the
-      next. The tab JavaScript swaps classes to control the content visibility
-      and styling.
-    </p>
+  <div id="myTabContent">
+    <div
+      class="hidden p-4 rounded-lg dark:bg-gray-800"
+      id="backend"
+      role="tabpanel"
+      aria-labelledby="backend-tab"
+    >
+      <app-table [listCommit]="listCommitBack" [typeList]="'back'"></app-table>
+    </div>
+    <div
+      class="hidden p-4 rounded-lg dark:bg-gray-800"
+      id="frontend"
+      role="tabpanel"
+      aria-labelledby="frontend-tab"
+    >
+      <app-table
+        [listCommit]="listCommitFront"
+        [typeList]="'front'"
+      ></app-table>
+    </div>
+    <div
+      class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+      id="settings"
+      role="tabpanel"
+      aria-labelledby="settings-tab"
+    >
+      <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+        Enpoints implementados:
+      </h2>
+      <ul class="space-y-1 text-gray-500 list-inside dark:text-gray-400">
+        <li class="flex items-center">
+          <svg
+            class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400 flex-shrink-0"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+            />
+          </svg>
+          <p class="font-semibold">/commit/list-commit-back</p>
+          <p>
+            : Endpoint para obtener los commits confirmados en el repositorio
+            del backend con paginación.
+          </p>
+        </li>
+        <li class="flex items-center">
+          <svg
+            class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400 flex-shrink-0"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+            />
+          </svg>
+          <p class="font-semibold">/commit/list-commit-front</p>
+          <p>
+            : Endpoint para obtener los commits confirmados en el repositorio
+            del frontend con paginación.
+          </p>
+        </li>
+      </ul>
+
+      <h2 class="mb-2 mt-2 text-lg font-semibold text-gray-900 dark:text-white">
+        Librerías instaladas:
+      </h2>
+      <ul class="space-y-1 text-gray-500 list-inside dark:text-gray-400">
+        <li class="flex items-center">
+          <svg
+            class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400 flex-shrink-0"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+            />
+          </svg>
+          <p class="font-semibold">axios</p>
+          <p>
+            : Use axios ya que la api de github permitía hacer una petición GET.
+          </p>
+        </li>
+        <li class="flex items-center">
+          <svg
+            class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400 flex-shrink-0"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+            />
+          </svg>
+          <p class="font-semibold">date-fns</p>
+          <p>: Use date-fns para formatear la fecha de registro del commit.</p>
+        </li>
+        <li class="flex items-center">
+          <svg
+            class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400 flex-shrink-0"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+            />
+          </svg>
+          <p class="font-semibold">Swagger</p>
+          <p>
+            : Agregué swagger para el mejor entendimiento de los endpoints con
+            frontend en /_docs.
+          </p>
+        </li>
+        <li class="flex items-center">
+          <svg
+            class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400 flex-shrink-0"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+            />
+          </svg>
+          <p class="font-semibold">class-transformer</p>
+          <p>: Usé la librería para cambiar el tipo de dato en mis dto's.</p>
+        </li>
+        <li class="flex items-center">
+          <svg
+            class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400 flex-shrink-0"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+            />
+          </svg>
+          <p class="font-semibold">class-validator</p>
+          <p>: Usé la librería para validar mis dto's.</p>
+        </li>
+      </ul>
+
+      <h2 class="mb-2 mt-2 text-lg font-semibold text-gray-900 dark:text-white">
+        Arquitectura/Practicas:
+      </h2>
+      <ul class="space-y-1 text-gray-500 list-inside dark:text-gray-400">
+        <li class="flex items-center">
+          <svg
+            class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400 flex-shrink-0"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+            />
+          </svg>
+          <p class="font-semibold">Hexagonal</p>
+          <p>
+            : Separé la lógica de negocio, y los servicios externos consumidos
+            atraves de inyección de dependencias.
+          </p>
+        </li>
+        <li class="flex items-center">
+          <svg
+            class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400 flex-shrink-0"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+            />
+          </svg>
+          <p class="font-semibold">SOLID</p>
+          <p>
+            : Agregué clases y casos de uso con una sola responsabilidad, con
+            sus interfaces propias.
+          </p>
+        </li>
+        <li class="flex items-center">
+          <svg
+            class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400 flex-shrink-0"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+            />
+          </svg>
+          <p class="font-semibold">Mappers</p>
+          <p>
+            : Agregué mappers para dar una integridad en la respuesta de las
+            propiedades en los endpoints.
+          </p>
+        </li>
+        <li class="flex items-center">
+          <svg
+            class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400 flex-shrink-0"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+            />
+          </svg>
+          <p class="font-semibold">Dtos</p>
+          <p>
+            : Agregué dtos para asegurar la integridad en las respuestas de los
+            endpoints.
+          </p>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
