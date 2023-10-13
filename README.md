@@ -1,27 +1,57 @@
 # CommitAppFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+![Project Image](https://i.imgur.com/l5nZVAe.png.png)
 
-## Development server
+This repository contains the source code of a project developed with Angular CLI. Below are the steps to start the project in your local environment.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+This application contains the user interface code to display the history of commits made in the back and front of the same application.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Previous requirements
 
-## Build
+Before you begin, make sure you have the following requirements installed on your system:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Node.js: [Download and Install Node.js](https://nodejs.org/)
+- Angular CLI: You can install it globally using the following command:
 
-## Running unit tests
+  ```bash
+  npm install -g @angular/cli
+  ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Startup Instructions
 
-## Running end-to-end tests
+Follow these steps to start the project in your local environment:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. **Clone the Repository**:
 
-## Further help
+   ```bash
+   git clone Repository_URL
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. **Navigate to Project Directory**:
+
+   ```bash
+   cd project_name
+   ```
+
+3. **Install Dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+4. **Install Dependencies**:
+
+   ```bash
+   ng serve
+   ```
+
+   The development server will run at http://localhost:4200/. Open this address in your browser to see the application in real time.
+
+Ready! Now you can start working on the project and make changes as per your needs.
+
+## Stay in touch
+
+- Author - [Jose Cuela](https://github.com/jgcuelap17722)
+- Linkedin - [Jose Cuela](https://www.linkedin.com/in/jose-cuela-dev/)
