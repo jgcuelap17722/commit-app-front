@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeActions } from '../../home.actions';
 import { apiResponse } from '../interfaces/list-commit.interface';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-tabs',
@@ -28,6 +29,7 @@ export class TabsComponent implements OnInit {
     },
     data: [],
   };
+  urlBackend = `${environment.API_URL}/_docs`;
 
   ngOnInit(): void {
     this.getListCommitFront();
