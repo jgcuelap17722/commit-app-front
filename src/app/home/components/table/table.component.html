@@ -11,6 +11,9 @@
       </tr>
     </thead>
     <tbody>
+      <ng-container
+        *ngIf="listCommit.data && listCommit.data.length > 0; else showSpinner"
+      ></ng-container>
       <tr
         *ngFor="let commit of listCommit.data"
         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
@@ -40,6 +43,13 @@
           <a href="#" class="font-medium">{{ commit.date }}</a>
         </td>
       </tr>
+      <ng-template #showSpinner>
+        <tr class="bg-white">
+          <td class="py-10" colspan="4">
+            <app-spinner></app-spinner>
+          </td>
+        </tr>
+      </ng-template>
     </tbody>
   </table>
   <nav
